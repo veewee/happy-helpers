@@ -30,7 +30,7 @@ use Symfony\Component\Finder\SplFileInfo;
         fn (iterable $codeLines) => join($codeLines, PHP_EOL)
     );
 
-    file_put_contents('bootstrap.php', $build($files));
+    file_put_contents($root.'/bootstrap.php', $build($files));
 
     echo 'Created bootstrap file!'.PHP_EOL;
 })();
