@@ -12,6 +12,7 @@ require_once __DIR__.'/src/iterables/append.php';
 require_once __DIR__.'/src/iterables/prepend.php';
 require_once __DIR__.'/src/repeat.php';
 require_once __DIR__.'/src/callables/pipe.php';
+require_once __DIR__.'/src/callables/combine.php';
 require_once __DIR__.'/src/results/result.php';
 require_once __DIR__.'/src/conditions/truthy.php';
 require_once __DIR__.'/src/conditions/when.php';
