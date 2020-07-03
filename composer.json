@@ -1,0 +1,30 @@
+{
+    "name": "veewee/happy-helpers",
+    "description": "Some happy helpers for your PHP code",
+    "type": "library",
+    "require-dev": {
+        "vimeo/psalm": "^3.12",
+        "phpunit/phpunit": "^9.2",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "symfony/finder": "^5.1",
+        "phpro/grumphp-shim": "^0.19.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toon Verwerft",
+            "email": "toonverwerft@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "HappyHelpers\\": "src/"
+        },
+        "files": [
+            "bootstrap.php"
+        ]
+    }
+}
