@@ -20,6 +20,7 @@ use Symfony\Component\Finder\SplFileInfo;
         ->name('*.php')
         ->getIterator();
 
+    /** @var callable(list<SplFileInfo>):string $build */
     $build = pipe(
         fn (iterable $files) => map(
             $files,
