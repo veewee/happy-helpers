@@ -5,6 +5,7 @@ require_once __DIR__.'/src/iterables/join.php';
 require_once __DIR__.'/src/iterables/nonEmpty.php';
 require_once __DIR__.'/src/iterables/each.php';
 require_once __DIR__.'/src/iterables/map.php';
+require_once __DIR__.'/src/iterables/toMap.php';
 require_once __DIR__.'/src/iterables/filter.php';
 require_once __DIR__.'/src/iterables/toList.php';
 require_once __DIR__.'/src/iterables/append.php';
