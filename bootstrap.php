@@ -21,3 +21,4 @@ require_once __DIR__.'/src/results/result.php';
 require_once __DIR__.'/src/conditions/truthy.php';
 require_once __DIR__.'/src/conditions/when.php';
 require_once __DIR__.'/src/identity.php';
+require_once __DIR__.'/src/functional/maybe.php';

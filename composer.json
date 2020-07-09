@@ -17,7 +17,8 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "marcosh/lamphpda": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -26,5 +27,11 @@
         "files": [
             "bootstrap.php"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/marcosh/lamphpda"
+        }
+    ]
 }
