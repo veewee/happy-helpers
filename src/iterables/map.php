@@ -4,19 +4,26 @@ declare(strict_types=1);
 
 namespace HappyHelpers\iterables;
 
+use Marcosh\LamPHPda\Typeclass\Functor;
+
 /**
  * @psalm-pure
- * @psalm-template V
- * @psalm-template O
+ * @template V
+ * @template O
  *
  * @param iterable<array-key, V> $items
- * @param callable(V, array-key): O $mapper
+ * @param callable(V): O $mapper
  *
- * @return iterable<array-key, O>
+ * @return iterable<array-key, O|Functor<V,O>>
  */
 function map(iterable $items, callable $mapper): iterable
 {
     foreach ($items as $key => $item) {
-        yield $key => $mapper($item, $key);
+        if ($item instanceof Functor) {
+            yield $key => $item->map($mapper);
+            continue;
+        }
+
+        yield $key => $mapper($item);
     }
 }
