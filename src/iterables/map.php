@@ -6,14 +6,13 @@ namespace HappyHelpers\iterables;
 
 /**
  * @psalm-pure
- * @psalm-template K of array-key
  * @psalm-template V
  * @psalm-template O
  *
- * @param iterable<K, V> $items
- * @param callable(V, K): O $mapper
+ * @param iterable<array-key, V> $items
+ * @param callable(V, array-key): O $mapper
  *
- * @return iterable<K, O>
+ * @return iterable<array-key, O>
  */
 function map(iterable $items, callable $mapper): iterable
 {

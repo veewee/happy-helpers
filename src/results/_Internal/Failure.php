@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace HappyHelpers\results\_Internal;
 
+use HappyHelpers\results\Types\ResultInterface;
 use Throwable;
 
 /**

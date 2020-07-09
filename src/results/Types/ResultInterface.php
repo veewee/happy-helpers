@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\results\_Internal;
+namespace HappyHelpers\results\Types;
 
 /**
- * @paslm-internal HappyHelpers\results
  * @psalm-immutable
  * @template T
  */

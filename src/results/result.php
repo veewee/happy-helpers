@@ -6,7 +6,7 @@ namespace HappyHelpers\results;
 
 use HappyHelpers\results\_Internal\Failure;
 use HappyHelpers\results\_Internal\Ok;
-use HappyHelpers\results\_Internal\ResultInterface;
+use HappyHelpers\results\Types\ResultInterface;
 use Throwable;
 
 /**

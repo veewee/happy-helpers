@@ -15,7 +15,12 @@ namespace HappyHelpers\iterables;
  *
  * @return R
  */
-function reduce(iterable $items, callable $callback, $initial)
+function foldLeft(iterable $items, callable $callback, $initial)
 {
-    return foldLeft($items, $callback, $initial);
+    $result = $initial;
+    foreach ($items as $key => $value) {
+        $result = $callback($result, $value, $key);
+    }
+
+    return $result;
 }

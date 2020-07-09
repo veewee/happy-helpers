@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace HappyHelpers\callables;
 
-use function HappyHelpers\iterables\foldLeft;
+use function HappyHelpers\iterables\foldRight;
 
 /**
- * Performs left-to-right function composition.
+ * Performs right-to-left function composition.
  *
  * @psalm-pure
  *
@@ -15,9 +15,9 @@ use function HappyHelpers\iterables\foldLeft;
  *
  * @return callable(mixed): mixed
  */
-function pipe(callable ...$stages): callable
+function compose(callable ...$stages): callable
 {
-    return fn ($input) => foldLeft(
+    return fn ($input) => foldRight(
         $stages,
         /**
          * @template R

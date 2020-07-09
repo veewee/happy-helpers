@@ -6,13 +6,12 @@ namespace HappyHelpers\iterables;
 
 /**
  * @psalm-pure
- * @psalm-template K of array-key
  * @psalm-template V
  *
- * @param iterable<K, V> $items
- * @param callable(V, K): boolean $filter
+ * @param iterable<array-key, V> $items
+ * @param callable(V, array-key): boolean $filter
  *
- * @return iterable<K, V>
+ * @return iterable<array-key, V>
  */
 function filter(iterable $items, callable $filter): iterable
 {
