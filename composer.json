@@ -3,6 +3,8 @@
     "description": "Some happy helpers for your PHP code",
     "type": "library",
     "require-dev": {
+        "ext-libxml": "*",
+        "ext-dom": "*",
         "vimeo/psalm": "^3.12",
         "phpunit/phpunit": "^9.2",
         "friendsofphp/php-cs-fixer": "^2.16",
@@ -17,7 +19,12 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "webmozart/assert": "^1.9"
+    },
+    "suggest": {
+        "ext-libxml": "If you want to use the dom functions",
+        "ext-dom": "If you want to use the dom functions"
     },
     "autoload": {
         "psr-4": {

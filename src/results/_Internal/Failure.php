@@ -10,7 +10,7 @@ use Throwable;
 
 /**
  * @paslm-internal HappyHelpers\results
- * @psalm-immutable
+ * @psalm-readonly
  * @template F of \Throwable
  * @implements Result<null, F>
  */
@@ -22,6 +22,8 @@ class Failure implements Result
     private Throwable $value;
 
     /**
+     * @psalm-pure
+     *
      * @param F $value
      */
     public function __construct(Throwable $value)
@@ -48,6 +50,8 @@ class Failure implements Result
     }
 
     /**
+     * @psalm-pure
+     *
      * @return Failure<F>
      */
     public function map(callable $f): self
@@ -56,6 +60,7 @@ class Failure implements Result
     }
 
     /**
+     * @psalm-pure
      * @template C
      *
      * @param callable(F): C $ifFailure

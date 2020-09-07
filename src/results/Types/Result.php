@@ -7,7 +7,7 @@ namespace HappyHelpers\results\Types;
 use HappyHelpers\functional\Types\Functor;
 
 /**
- * @psalm-immutable
+ * @psalm-readonly
  * @template R | null
  * @template T as \Throwable|null
  *

@@ -1,6 +1,6 @@
 <?php
 
 /**
- * @psalm-immutable
+ * @psalm-readonly
  */
 interface Throwable {}
