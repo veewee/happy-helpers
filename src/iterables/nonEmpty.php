@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace HappyHelpers\iterables;
 
-use function HappyHelpers\conditions\truthy;
+use function HappyHelpers\predicates\isTruthy;
 
 /**
  * @psalm-pure
@@ -19,6 +19,6 @@ function nonEmpty(iterable $items): iterable
     return filter(
         $items,
         /** @param V $item */
-        fn ($item): bool => truthy($item)
+        fn ($item): bool => isTruthy($item)
     );
 }

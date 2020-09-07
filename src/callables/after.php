@@ -16,7 +16,7 @@ namespace HappyHelpers\callables;
  *
  * @return callable(I): R
  */
-function combine(callable $first, callable $next): callable
+function after(callable $first, callable $next): callable
 {
     return fn ($input) => $next($first($input));
 }

@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace HappyHelpers\results\_Internal;
 
-use HappyHelpers\results\Types\ResultInterface;
+use HappyHelpers\results\Types\C;
+use HappyHelpers\results\Types\Result;
 use Throwable;
 
 /**
  * @paslm-internal HappyHelpers\results
  * @psalm-immutable
  * @template F of \Throwable
- * @implements ResultInterface<F>
+ * @implements Result<null, F>
  */
-class Failure implements ResultInterface
+class Failure implements Result
 {
     /**
      * @var F
@@ -36,7 +37,7 @@ class Failure implements ResultInterface
         return $this->value;
     }
 
-    public function isError(): bool
+    public function isFailure(): bool
     {
         return false;
     }
@@ -44,5 +45,25 @@ class Failure implements ResultInterface
     public function isOk(): bool
     {
         return true;
+    }
+
+    /**
+     * @return Failure<F>
+     */
+    public function map(callable $f): self
+    {
+        return $this;
+    }
+
+    /**
+     * @template C
+     *
+     * @param callable(F): C $ifFailure
+     *
+     * @return C
+     */
+    public function proceed(callable $ifOk, callable $ifFailure)
+    {
+        return $ifFailure($this->value());
     }
 }

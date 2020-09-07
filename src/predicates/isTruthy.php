@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\conditions;
+namespace HappyHelpers\predicates;
 
 /**
  * @psalm-pure
  *
  * @param mixed $value
  */
-function truthy($value): bool
+function isTruthy($value): bool
 {
     return (bool) $value;
 }

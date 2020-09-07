@@ -6,18 +6,18 @@ namespace HappyHelpers\results;
 
 use HappyHelpers\results\_Internal\Failure;
 use HappyHelpers\results\_Internal\Ok;
-use HappyHelpers\results\Types\ResultInterface;
+use HappyHelpers\results\Types\Result;
 use Throwable;
 
 /**
  * @psalm-pure
- * @template V
+ * @template V as mixed
  *
  * @param V $value
  *
- * @return ResultInterface<V>
+ * @return Result<(V is \Throwable ? null : V), (V is \Throwable ? V : null)>
  */
-function result($value): ResultInterface
+function result($value): Result
 {
     return $value instanceof Throwable ? new Failure($value) : new Ok($value);
 }

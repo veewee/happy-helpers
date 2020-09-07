@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace HappyHelpers\iterables;
 
-use Marcosh\LamPHPda\Typeclass\Functor;
+use HappyHelpers\functional\Types\Functor;
 
 /**
  * @psalm-pure
@@ -14,7 +14,7 @@ use Marcosh\LamPHPda\Typeclass\Functor;
  * @param iterable<array-key, V> $items
  * @param callable(V): O $mapper
  *
- * @return iterable<array-key, O|Functor<V,O>>
+ * @return iterable<array-key, O|Functor<O>>
  */
 function map(iterable $items, callable $mapper): iterable
 {
