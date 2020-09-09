@@ -11,7 +11,7 @@ interface Functor
 {
     /**
      * @template B
-     * @psalm-param callable(V): B $mapper
+     * @psalm-param pure-callable(V): B $mapper
      *
      * @return Functor<B>
      * @psalm-pure

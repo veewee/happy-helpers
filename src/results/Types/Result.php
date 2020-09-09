@@ -7,7 +7,7 @@ namespace HappyHelpers\results\Types;
 use HappyHelpers\functional\Types\Functor;
 
 /**
- * @psalm-readonly
+ * @psalm-immutable
  * @template R | null
  * @template T as \Throwable|null
  *
@@ -31,7 +31,6 @@ interface Result extends Functor
     public function value();
 
     /**
-     * @psalm-pure
      * @template C
      *
      * @param callable(R): C $ifOk

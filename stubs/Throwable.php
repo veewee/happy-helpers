@@ -1,6 +1,16 @@
 <?php
 
 /**
- * @psalm-readonly
+ * @psalm-immutable
  */
 interface Throwable {}
+
+/**
+ * @psalm-immutable
+ */
+class Exception {}
+
+/**
+ * @psalm-immutable
+ */
+class RuntimeException {}

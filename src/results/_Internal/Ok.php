@@ -7,8 +7,8 @@ namespace HappyHelpers\results\_Internal;
 use HappyHelpers\results\Types\Result;
 
 /**
- * @paslm-internal HappyHelpers\results
- * @psalm-readonly
+ * @psalm-internal HappyHelpers\results
+ * @psalm-immutable
  * @template V
  * @implements Result<V, null>
  */
@@ -20,8 +20,6 @@ class Ok implements Result
     private $value;
 
     /**
-     * @psalm-pure
-     *
      * @param V $value
      */
     public function __construct($value)
@@ -48,7 +46,6 @@ class Ok implements Result
     }
 
     /**
-     * @psalm-pure
      * @template C
      *
      * @param callable(V): C $ifOk
@@ -61,10 +58,9 @@ class Ok implements Result
     }
 
     /**
-     * @psalm-pure
      * @template O
      *
-     * @param callable(V):O $f
+     * @param pure-callable(V):O $f
      *
      * @return Ok<O>
      */

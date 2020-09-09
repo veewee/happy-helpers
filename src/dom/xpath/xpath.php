@@ -7,6 +7,9 @@ namespace HappyHelpers\dom\xpath;
 use DOMDocument;
 use DOMXPath;
 
+/**
+ * @param array<string, string> $namespaces
+ */
 function xpath(DOMDocument $document, array $namespaces): DOMXPath
 {
     $xpath = new DOMXPath($document);

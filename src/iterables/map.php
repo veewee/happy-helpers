@@ -7,12 +7,13 @@ namespace HappyHelpers\iterables;
 use HappyHelpers\functional\Types\Functor;
 
 /**
+ * @psalm-suppress ImpureMethodCall
  * @psalm-pure
  * @template V
  * @template O
  *
  * @param iterable<array-key, V> $items
- * @param callable(V): O $mapper
+ * @param pure-callable(V): O $mapper
  *
  * @return iterable<array-key, O|Functor<O>>
  */

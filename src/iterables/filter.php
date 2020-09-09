@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace HappyHelpers\iterables;
 
 /**
+ * @psalm-suppress ImpureMethodCall
+ *
  * @psalm-pure
  * @psalm-template V
  *
  * @param iterable<array-key, V> $items
- * @param callable(V, array-key): boolean $filter
+ * @param pure-callable(V, array-key): boolean $filter
  *
  * @return iterable<array-key, V>
  */

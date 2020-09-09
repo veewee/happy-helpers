@@ -8,7 +8,7 @@ namespace HappyHelpers\callables;
  * @psalm-pure
  * @template O
  *
- * @param callable():O $repeated
+ * @param pure-callable():O $repeated
  *
  * @return iterable<O>
  */

@@ -13,3 +13,11 @@ function trimContents(DOMDocument $document): DOMDocument
 
     return $document;
 }
+
+/**
+ * @return callable(DOMDocument): DOMDocument
+ */
+function withTrimmedContents(): callable
+{
+    return fn (DOMDocument $document) => trimContents($document);
+}

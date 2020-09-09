@@ -11,22 +11,9 @@ use LibXMLError;
  */
 function formatError(LibXMLError $error): string
 {
-    $type = 'none';
-    switch ($error->level) {
-        case LIBXML_ERR_WARNING:
-            $type = 'warning';
-            break;
-        case LIBXML_ERR_FATAL:
-            $type = 'fatal';
-            break;
-        case LIBXML_ERR_ERROR:
-            $type = 'error';
-            break;
-    }
-
     return sprintf(
         '[%s] %s: %s (%s) on line %s,%s',
-        mb_strtoupper($type),
+        mb_strtoupper(formatLevel($error)),
         $error->file,
         $error->message,
         $error->code ?: 0,

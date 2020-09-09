@@ -10,8 +10,8 @@ namespace HappyHelpers\predicates;
  * @template O as mixed|null
  *
  * @param I $value
- * @param callable(I): O $collect
- * @param callable(): O $fallback
+ * @param pure-callable(I): O $collect
+ * @param pure-callable(): O $fallback
  *
  * @return O
  */

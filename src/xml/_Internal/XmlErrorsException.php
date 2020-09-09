@@ -12,15 +12,19 @@ use Webmozart\Assert\Assert;
 
 /**
  * @internal
- * @psalm-readonly
+ * @psalm-immutable
+ * @psalm-suppress MissingImmutableAnnotation
  */
 class XmlErrorsException extends \RuntimeException
 {
     /**
-     * @var list<LibXMLError>
+     * @var non-empty-list<LibXMLError>
      */
     private array $errors;
 
+    /**
+     * @param non-empty-list<LibXMLError> $errors
+     */
     private function __construct(array $errors)
     {
         Assert::allIsInstanceOf($errors, LibXMLError::class);
@@ -38,7 +42,7 @@ class XmlErrorsException extends \RuntimeException
     }
 
     /**
-     * @param list<LibXMLError> $errors
+     * @param non-empty-list<LibXMLError> $errors
      */
     public static function fromXmlErrors(array $errors): self
     {
@@ -46,7 +50,7 @@ class XmlErrorsException extends \RuntimeException
     }
 
     /**
-     * @param list<LibXMLError> $errors
+     * @param non-empty-list<LibXMLError> $errors
      */
     public function errors(): array
     {

@@ -12,3 +12,11 @@ function utf8(DOMDocument $document): DOMDocument
 
     return $document;
 }
+
+/**
+ * @return callable(DOMDocument): DOMDocument
+ */
+function withUtf8(): callable
+{
+    return fn (DOMDocument $document) => utf8($document);
+}

@@ -18,11 +18,14 @@ use LibXMLError;
 function detectXmlErrors(callable $run)
 {
     return useInternalErrors(
+        /**
+         * @throws XmlErrorsException
+         */
         static function () use ($run) {
             libxml_clear_errors();
             $result = $run();
 
-            /** @var LibXMLError[] $errors */
+            /** @var list<LibXMLError> $errors */
             $errors = libxml_get_errors();
             libxml_clear_errors();
 

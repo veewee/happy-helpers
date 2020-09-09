@@ -10,7 +10,7 @@ namespace HappyHelpers\iterables;
  * @psalm-template R
  *
  * @param iterable<array-key, V> $items
- * @param callable(R, V, array-key): R $callback
+ * @param pure-callable(R, V, array-key): R $callback
  * @param R $initial
  *
  * @return R
