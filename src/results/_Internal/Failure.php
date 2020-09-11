@@ -11,18 +11,19 @@ use Throwable;
 /**
  * @psalm-internal HappyHelpers\results
  * @psalm-immutable
- * @template F of \Throwable
- * @implements Result<null, F>
+ * @ template V of mixed
+ * @template T of \Throwable
+ * @implements Result<mixed, T>
  */
 class Failure implements Result
 {
     /**
-     * @var F
+     * @var T
      */
     private Throwable $value;
 
     /**
-     * @param F $value
+     * @param T $value
      */
     public function __construct(Throwable $value)
     {
@@ -30,7 +31,7 @@ class Failure implements Result
     }
 
     /**
-     * @return F
+     * @return T
      */
     public function value(): Throwable
     {
@@ -48,7 +49,7 @@ class Failure implements Result
     }
 
     /**
-     * @return Failure<F>
+     * @return Failure<T>
      */
     public function map(callable $f): self
     {
@@ -58,7 +59,7 @@ class Failure implements Result
     /**
      * @template C
      *
-     * @param callable(F): C $ifFailure
+     * @param callable(T): C $ifFailure
      *
      * @return C
      */

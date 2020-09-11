@@ -8,25 +8,18 @@ use HappyHelpers\functional\Types\Functor;
 
 /**
  * @psalm-immutable
- * @template R | null
- * @template T as \Throwable|null
- *
+ * @template R
+ * @template T as \Throwable
  * @extends Functor<R>
  */
 interface Result extends Functor
 {
-    /**
-     * @return (T is \Throwable ? true : false)
-     */
     public function isFailure(): bool;
 
-    /**
-     * @return (T is \Throwable ? false : true)
-     */
     public function isOk(): bool;
 
     /**
-     * @return (T is \Throwable ? T : R)
+     * @return R|T
      */
     public function value();
 

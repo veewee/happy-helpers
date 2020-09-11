@@ -15,7 +15,7 @@ use Throwable;
  *
  * @param V $value
  *
- * @return Result<(V is \Throwable ? null : V), (V is \Throwable ? V : null)>
+ * @return Result<(V is \Throwable ? null : V), \Throwable>
  */
 function result($value): Result
 {

@@ -13,7 +13,7 @@ interface Functor
      * @template B
      * @psalm-param pure-callable(V): B $mapper
      *
-     * @return Functor<B>
+     * @psalm-return Functor<B>
      * @psalm-pure
      */
     public function map(callable $mapper);

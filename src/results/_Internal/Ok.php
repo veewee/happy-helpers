@@ -10,7 +10,7 @@ use HappyHelpers\results\Types\Result;
  * @psalm-internal HappyHelpers\results
  * @psalm-immutable
  * @template V
- * @implements Result<V, null>
+ * @implements Result<V, \Throwable>
  */
 class Ok implements Result
 {

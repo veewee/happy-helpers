@@ -7,8 +7,7 @@
         "ext-dom": "*",
         "ext-xml": "*",
         "symfony/finder": "^5.1",
-        "phpro/grumphp-shim": "^0.22.0",
-        "vimeo/psalm": "^3.15"
+        "phpro/grumphp-shim": "^0.22.0"
     },
     "license": "MIT",
     "authors": [
