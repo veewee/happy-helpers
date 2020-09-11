@@ -8,7 +8,7 @@ namespace HappyHelpers\iterables;
  * @psalm-pure
  * @template V
  *
- * @param iterable<array-key, V> $items
+ * @param iterable<int, V> $items
  * @param list<V> $new
  *
  * @return iterable<array-key, V>

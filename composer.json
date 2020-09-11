@@ -5,11 +5,10 @@
     "require-dev": {
         "ext-libxml": "*",
         "ext-dom": "*",
-        "vimeo/psalm": "^3.15",
-        "phpunit/phpunit": "^9.2",
-        "friendsofphp/php-cs-fixer": "^2.16",
+        "ext-xml": "*",
         "symfony/finder": "^5.1",
-        "phpro/grumphp-shim": "^0.19.1"
+        "phpro/grumphp-shim": "^0.22.0",
+        "vimeo/psalm": "^3.15"
     },
     "license": "MIT",
     "authors": [
@@ -34,10 +33,12 @@
             "bootstrap.php"
         ]
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/marcosh/lamphpda"
-        }
-    ]
+    "autoload-dev": {
+        "psr-4": {
+            "HappyHelpers\\Tests\\": "tests/"
+        },
+        "files": [
+            "bootstrap.php"
+        ]
+    }
 }

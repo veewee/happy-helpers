@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\callables;
+namespace HappyHelpers\generators;
 
 /**
  * @psalm-pure
@@ -15,6 +15,6 @@ namespace HappyHelpers\callables;
 function repeat(int $times, callable $repeated): iterable
 {
     for ($i = 0; $i < $times; ++$i) {
-        yield from $repeated();
+        yield $repeated();
     }
 }

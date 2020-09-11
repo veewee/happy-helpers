@@ -39,12 +39,12 @@ class Failure implements Result
 
     public function isFailure(): bool
     {
-        return false;
+        return true;
     }
 
     public function isOk(): bool
     {
-        return true;
+        return false;
     }
 
     /**

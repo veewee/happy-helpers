@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace HappyHelpers\iterables;
 
 /**
+ * This function is an alias for foldLeft.
+ *
  * @psalm-pure
  * @psalm-template V
  * @psalm-template R

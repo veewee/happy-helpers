@@ -6,7 +6,17 @@ grumphp:
         psalm:
             config: psalm.xml
             show_info: true
-        phpunit: ~
+        infection:
+            min_msi: 100
+            min_covered_msi: 100
         composer:
             metadata:
                 blocking: false
+        clover_coverage:
+            clover_file: coverage/clover.xml
+            level: 100
+            metadata:
+                priority: -100
+    environment:
+        paths:
+            - 'tools'
