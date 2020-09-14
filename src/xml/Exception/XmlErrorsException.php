@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\xml\_Internal;
+namespace HappyHelpers\xml\Exception;
 
 use function HappyHelpers\iterables\map;
 use function HappyHelpers\strings\stringFromIterable;
@@ -11,11 +11,10 @@ use LibXMLError;
 use Webmozart\Assert\Assert;
 
 /**
- * @internal
  * @psalm-immutable
  * @psalm-suppress MissingImmutableAnnotation
  */
-class XmlErrorsException extends \RuntimeException
+final class XmlErrorsException extends \RuntimeException
 {
     /**
      * @var non-empty-list<LibXMLError>

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace HappyHelpers\xml;
 
-use HappyHelpers\xml\_Internal\XmlErrorsException;
+use HappyHelpers\xml\Exception\XmlErrorsException;
 use function libxml_clear_errors;
 use function libxml_get_errors;
 use LibXMLError;

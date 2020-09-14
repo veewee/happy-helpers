@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace HappyHelpers\dom\configurator;
 
 use DOMDocument;
-use HappyHelpers\xml\_Internal\XmlErrorsException;
 use function HappyHelpers\xml\detectXmlErrors;
+use HappyHelpers\xml\Exception\XmlErrorsException;
 use Webmozart\Assert\Assert;
 
 /**

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\Tests\Unit\results\_Internal;
+namespace HappyHelpers\Tests\Unit\results\Types;
 
 use HappyHelpers\functional\Types\Functor;
-use HappyHelpers\results\_Internal\Failure;
+use HappyHelpers\results\Types\Failure;
 use HappyHelpers\results\Types\Result;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \HappyHelpers\results\_Internal\Failure
+ * @covers \HappyHelpers\results\Types\Failure
  */
 class FailureTest extends TestCase
 {

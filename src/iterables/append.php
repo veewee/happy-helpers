@@ -11,7 +11,7 @@ namespace HappyHelpers\iterables;
  * @param iterable<int, V> $items
  * @param list<V> $new
  *
- * @return iterable<array-key, V>
+ * @return iterable<int, V>
  */
 function append(iterable $items, ...$new): iterable
 {

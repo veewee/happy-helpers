@@ -18,7 +18,8 @@
     ],
     "require": {
         "php": ">=7.4",
-        "webmozart/assert": "^1.9"
+        "webmozart/assert": "^1.9",
+        "thecodingmachine/safe": "^1.2"
     },
     "suggest": {
         "ext-libxml": "If you want to use the dom functions",

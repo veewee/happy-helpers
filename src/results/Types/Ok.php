@@ -2,17 +2,14 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\results\_Internal;
-
-use HappyHelpers\results\Types\Result;
+namespace HappyHelpers\results\Types;
 
 /**
- * @psalm-internal HappyHelpers\results
  * @psalm-immutable
  * @template V
- * @implements Result<V, \Throwable>
+ * @implements Result<V>
  */
-class Ok implements Result
+final class Ok implements Result
 {
     /**
      * @var V
@@ -49,6 +46,7 @@ class Ok implements Result
      * @template C
      *
      * @param callable(V): C $ifOk
+     * @param callable(mixed): C $ifFailure
      *
      * @return C
      */

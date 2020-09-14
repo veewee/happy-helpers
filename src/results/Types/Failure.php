@@ -2,20 +2,16 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\results\_Internal;
+namespace HappyHelpers\results\Types;
 
-use HappyHelpers\results\Types\C;
-use HappyHelpers\results\Types\Result;
 use Throwable;
 
 /**
- * @psalm-internal HappyHelpers\results
  * @psalm-immutable
- * @ template V of mixed
  * @template T of \Throwable
- * @implements Result<mixed, T>
+ * @implements Result<T>
  */
-class Failure implements Result
+final class Failure implements Result
 {
     /**
      * @var T
@@ -49,6 +45,8 @@ class Failure implements Result
     }
 
     /**
+     * @psalm-suppress ImplementedReturnTypeMismatch
+     *
      * @return Failure<T>
      */
     public function map(callable $f): self
@@ -59,6 +57,7 @@ class Failure implements Result
     /**
      * @template C
      *
+     * @param callable(mixed): C $ifOk
      * @param callable(T): C $ifFailure
      *
      * @return C

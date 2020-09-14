@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace HappyHelpers\Tests\Unit\xml;
 
-use HappyHelpers\xml\_Internal\XmlErrorsException;
 use function HappyHelpers\xml\detectXmlErrors;
+use HappyHelpers\xml\Exception\XmlErrorsException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  * @uses ::HappyHelpers\strings\stringFromIterable
  * @uses ::HappyHelpers\xml\formatError
  * @uses ::HappyHelpers\xml\formatLevel
- * @uses \HappyHelpers\xml\_Internal\XmlErrorsException
+ * @uses \HappyHelpers\xml\Exception\XmlErrorsException
  */
 class detectXmlErrorsTest extends TestCase
 {

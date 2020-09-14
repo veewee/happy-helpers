@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace HappyHelpers\results;
 
-use HappyHelpers\results\_Internal\Failure;
-use HappyHelpers\results\_Internal\Ok;
+use HappyHelpers\results\Types\Failure;
+use HappyHelpers\results\Types\Ok;
 use HappyHelpers\results\Types\Result;
 use Throwable;
 
@@ -15,7 +15,7 @@ use Throwable;
  *
  * @param V $value
  *
- * @return Result<(V is \Throwable ? null : V), \Throwable>
+ * @return (V is Throwable ? Failure<V&Throwable> : Ok<V>)
  */
 function result($value): Result
 {

@@ -9,7 +9,6 @@ use HappyHelpers\functional\Types\Functor;
 /**
  * @psalm-immutable
  * @template R
- * @template T as \Throwable
  * @extends Functor<R>
  */
 interface Result extends Functor
@@ -19,15 +18,15 @@ interface Result extends Functor
     public function isOk(): bool;
 
     /**
-     * @return R|T
+     * @return R
      */
     public function value();
 
     /**
      * @template C
      *
-     * @param callable(R): C $ifOk
-     * @param callable(T): C $ifFailure
+     * @param callable(mixed): C $ifOk
+     * @param callable(mixed): C $ifFailure
      *
      * @return C
      */

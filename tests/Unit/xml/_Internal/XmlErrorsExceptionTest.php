@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace HappyHelpers\Tests\Unit\xml\_Internal;
 
-use HappyHelpers\xml\_Internal\XmlErrorsException;
+use HappyHelpers\xml\Exception\XmlErrorsException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \HappyHelpers\xml\_Internal\XmlErrorsException
+ * @covers \HappyHelpers\xml\Exception\XmlErrorsException
  *
  * @uses ::HappyHelpers\iterables\map
  * @uses ::HappyHelpers\iterables\toList

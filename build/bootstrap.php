@@ -16,6 +16,7 @@ use Symfony\Component\Finder\SplFileInfo;
     $files = Finder::create()
         ->in(dirname(__DIR__).'/src')
         ->files()
+        ->notPath('Exception')
         ->notPath('Types')
         ->notPath('_Internal')
         ->name('*.php')

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\Tests\Unit\results\_Internal;
+namespace HappyHelpers\Tests\Unit\results\Types;
 
 use HappyHelpers\functional\Types\Functor;
-use HappyHelpers\results\_Internal\Ok;
+use HappyHelpers\results\Types\Ok;
 use HappyHelpers\results\Types\Result;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \HappyHelpers\results\_Internal\Ok
+ * @covers \HappyHelpers\results\Types\Ok
  */
 class OkTest extends TestCase
 {
