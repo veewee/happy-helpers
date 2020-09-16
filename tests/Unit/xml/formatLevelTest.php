@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace HappyHelpers\Tests\Unit\xml;
 
+use HappyHelpers\Tests\Helper\xml\LibXmlErrorProvidingTrait;
 use function HappyHelpers\xml\formatLevel;
 use PHPUnit\Framework\TestCase;
 
@@ -12,6 +13,8 @@ use PHPUnit\Framework\TestCase;
  */
 class formatLevelTest extends TestCase
 {
+    use LibXmlErrorProvidingTrait;
+
     /**
      * @test
      * @dataProvider provideErrors
@@ -43,13 +46,5 @@ class formatLevelTest extends TestCase
             $this->createError(900000),
             'none',
         ];
-    }
-
-    private function createError(int $level): \LibXMLError
-    {
-        $error = new \LibXMLError();
-        $error->level = $level;
-
-        return $error;
     }
 }

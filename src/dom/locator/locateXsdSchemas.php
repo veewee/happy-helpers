@@ -10,7 +10,7 @@ use function Safe\preg_split;
 /**
  * @return iterable<int, string>
  */
-function xsdNamespacedSchemaLocator(DOMDocument $document): iterable
+function locateNamespacedXsdSchemas(DOMDocument $document): iterable
 {
     $schemaNs = 'http://www.w3.org/2001/XMLSchema-instance';
     $attributes = $document->documentElement->attributes;
@@ -29,7 +29,7 @@ function xsdNamespacedSchemaLocator(DOMDocument $document): iterable
 /**
  * @return iterable<int, string>
  */
-function xsdNotNamespacedSchemaLocator(DOMDocument $document): iterable
+function locateNoNamespacedXsdSchemas(DOMDocument $document): iterable
 {
     $schemaNs = 'http://www.w3.org/2001/XMLSchema-instance';
     $attributes = $document->documentElement->attributes;
@@ -42,8 +42,8 @@ function xsdNotNamespacedSchemaLocator(DOMDocument $document): iterable
 /**
  * @return iterable<int, string>
  */
-function xsdSchemaLocator(DOMDocument $document): iterable
+function locateXsdSchemas(DOMDocument $document): iterable
 {
-    yield from xsdNamespacedSchemaLocator($document);
-    yield from xsdNotNamespacedSchemaLocator($document);
+    yield from locateNamespacedXsdSchemas($document);
+    yield from locateNoNamespacedXsdSchemas($document);
 }

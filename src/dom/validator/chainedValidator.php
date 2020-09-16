@@ -14,6 +14,8 @@ use HappyHelpers\xml\Exception\XmlErrorsException;
 use LibXMLError;
 
 /**
+ * TODO : this imports don't work yet. Remove custom types when possible!
+ *
  * @psalm-import-type ValidationResult from \HappyHelpers\dom\configurator\withValidator()
  * @psalm-import-type Validator from \HappyHelpers\dom\configurator\withValidator()
  *
@@ -23,8 +25,6 @@ use LibXMLError;
  * @param list<Validator> $validators
  *
  * @throws XmlErrorsException
- *
- * TODO : this imports don't work yet. Remove custom types when possible!
  *
  * @return Validator
  */

@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace HappyHelpers\Tests\Unit\xml\_Internal;
+namespace HappyHelpers\Tests\Unit\xml\Exception;
 
+use HappyHelpers\Tests\Helper\xml\LibXmlErrorProvidingTrait;
 use HappyHelpers\xml\Exception\XmlErrorsException;
 use PHPUnit\Framework\TestCase;
 
@@ -18,6 +19,8 @@ use PHPUnit\Framework\TestCase;
  */
 class XmlErrorsExceptionTest extends TestCase
 {
+    use LibXmlErrorProvidingTrait;
+
     /** @test */
     public function it_can_throw_an_exception_containing_xml_errors(): void
     {
@@ -43,18 +46,5 @@ class XmlErrorsExceptionTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         XmlErrorsException::fromXmlErrors(['hi', 'hi']);
-    }
-
-    private function createError(int $level): \LibXMLError
-    {
-        $error = new \LibXMLError();
-        $error->level = $level;
-        $error->file = 'file.xml';
-        $error->message = 'message';
-        $error->line = 99;
-        $error->code = 0;
-        $error->column = 0;
-
-        return $error;
     }
 }

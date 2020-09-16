@@ -6,6 +6,7 @@ use function HappyHelpers\xml\formatLevel;
 
 namespace HappyHelpers\Tests\Unit\xml;
 
+use HappyHelpers\Tests\Helper\xml\LibXmlErrorProvidingTrait;
 use function HappyHelpers\xml\formatError;
 use PHPUnit\Framework\TestCase;
 
@@ -16,6 +17,8 @@ use PHPUnit\Framework\TestCase;
  */
 class formatErrorTest extends TestCase
 {
+    use LibXmlErrorProvidingTrait;
+
     /**
      * @test
      * @dataProvider provideErrors
@@ -54,22 +57,5 @@ class formatErrorTest extends TestCase
             }),
             '[FATAL] file.xml: message (10) on line 99,20',
         ];
-    }
-
-    private function createError(int $level, ?callable $configurator = null): \LibXMLError
-    {
-        $error = new \LibXMLError();
-        $error->level = $level;
-        $error->file = 'file.xml';
-        $error->message = 'message';
-        $error->line = 99;
-        $error->code = null;
-        $error->column = null;
-
-        if (null !== $configurator) {
-            $configurator($error);
-        }
-
-        return $error;
     }
 }

@@ -13,7 +13,7 @@
         </ignoreFiles>
     </projectFiles>
     <stubs>
-        <file name="stubs/Throwable.php"/>
-        <file name="stubs/LibXMLError.php"/>
+        <file name="stubs/Throwable.phpstub"/>
+        <file name="stubs/LibXMLError.phpstub"/>
     </stubs>
 </psalm>
