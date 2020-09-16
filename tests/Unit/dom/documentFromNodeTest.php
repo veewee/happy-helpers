@@ -16,7 +16,8 @@ use PHPUnit\Framework\TestCase;
  * @uses ::HappyHelpers\dom\configurator\withLoader
  * @uses ::HappyHelpers\dom\document
  * @uses ::HappyHelpers\dom\loader\xmlNodeLoader
- * @uses ::HappyHelpers\dom\manipulator\importNode
+ * @uses ::HappyHelpers\dom\manipulator\appendExternalNode
+ * @uses ::HappyHelpers\dom\manipulator\importNodeDeeply
  * @uses ::HappyHelpers\xml\detectXmlErrors
  * @uses ::HappyHelpers\xml\useInternalErrors
  */

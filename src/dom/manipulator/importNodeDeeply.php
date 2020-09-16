@@ -8,17 +8,13 @@ use DOMDocument;
 use DOMNode;
 use Webmozart\Assert\Assert;
 
-function importNode(DOMNode $source, DOMNode $target): bool
+function importNodeDeeply(DOMNode $source, DOMNode $target): DOMNode
 {
     $document = $target instanceof DOMDocument ? $target : $target->ownerDocument;
     Assert::notNull($document);
 
-    $copy = $document->importNode($source, true);
-    if (!$copy) {
-        return false;
-    }
+    $result = @$document->importNode($source, true);
+    Assert::notFalse($result, 'Cannot import node: Node Type Not Supported');
 
-    $target->appendChild($copy);
-
-    return true;
+    return $result;
 }

@@ -13,4 +13,5 @@ function assertExtensionLoaded(string $extension): void
         in_array($extension, get_loaded_extensions(), true),
         'The '.$extension.' extension is not loaded!'
     );
+    // @codeCoverageIgnoreStart
 }

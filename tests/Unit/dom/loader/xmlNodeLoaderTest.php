@@ -6,12 +6,17 @@ namespace HappyHelpers\Tests\Unit\dom\loader;
 
 use DOMDocument;
 use function HappyHelpers\dom\loader\xmlNodeLoader;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers ::HappyHelpers\dom\loader\xmlNodeLoader()
  *
- * @uses ::HappyHelpers\dom\manipulator\importNode()
+ * @uses ::HappyHelpers\dom\manipulator\appendExternalNode
+ * @uses ::HappyHelpers\dom\manipulator\importNodeDeeply
+ * @uses ::HappyHelpers\assertions\assertExtensionLoaded
+ * @uses ::HappyHelpers\xml\detectXmlErrors
+ * @uses ::HappyHelpers\xml\useInternalErrors
  */
 class xmlNodeLoaderTest extends TestCase
 {
@@ -42,7 +47,9 @@ class xmlNodeLoaderTest extends TestCase
 
         self::assertIsCallable($loader);
 
-        $result = @$loader($doc);
-        self::assertFalse($result);
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Cannot import node: Node Type Not Supported');
+
+        $loader($doc);
     }
 }
