@@ -1,3 +1,3 @@
-# TODO
-This is currently just a play-project to test some functional programming concepts.
+# WIP
+This is currently just a play-project.
 It might evolve some day .. who knows :)
